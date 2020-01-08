@@ -94,10 +94,6 @@ f 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
 `, true)
 }
-function moonhit () {
-    rocket.startEffect(effects.fire)
-    rocket.destroy()
-}
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     moonhit()
 })
@@ -109,5 +105,9 @@ info.onCountdownEnd(function () {
     rocket.setVelocity(0, -40)
     rocket.startEffect(effects.trail)
 })
+function moonhit () {
+    rocket.startEffect(effects.fire)
+    rocket.destroy()
+}
 let rocket: Sprite = null
 scene2()
